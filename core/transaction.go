@@ -6,7 +6,7 @@ type Transaction struct {
 	Data []byte
 
 	PublicKey crypto.PublicKey
-	Signature crypto.Signature
+	Signature *crypto.Signature
 }
 
 func (tx *Transaction) Sign(privKey crypto.PrivateKey) error {
@@ -15,6 +15,6 @@ func (tx *Transaction) Sign(privKey crypto.PrivateKey) error {
 		return err
 	}
 	tx.PublicKey = privKey.PublicKey()
-	tx.Signature = *sig
+	tx.Signature = sig
 	return nil
 }
