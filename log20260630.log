@@ -1,0 +1,16 @@
+go test -v ./...
+?   	prt	[no test files]
+=== RUN   TestHeader_Encode_Decode
+--- PASS: TestHeader_Encode_Decode (0.00s)
+=== RUN   TestBlock_Encode_Decode
+&{Header:{Version:1 PrevBlock:c03d79646a42159ffc58faadf42afaace856337a9dffd3a548d72b3d966403c7 Timestamp:1782825052877304220 Height:10 Nonce:412145} Transactions:[] hash:[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]}--- PASS: TestBlock_Encode_Decode (0.00s)
+=== RUN   TestBlockHash
+c648cbb5feb464539cc8c925c7c0ac926c8095418c3ae3f16236c4aee368573b
+--- PASS: TestBlockHash (0.00s)
+PASS
+ok  	prt/core	(cached)
+=== RUN   TestSendMessage
+--- PASS: TestSendMessage (0.00s)
+PASS
+ok  	prt/network	(cached)
+?   	prt/types	[no test files]
