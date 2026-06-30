@@ -1,14 +1,10 @@
 package core
 
-import "io"
+import "prt/crypto"
 
 type Transaction struct {
 	Data []byte
-}
 
-func (tx *Transaction) DecodeBinary(r io.Reader) error {
-	return nil
-}
-func (tx *Transaction) EncodeBinary(w io.Writer) error {
-	return nil
+	PublicKey crypto.PublicKey
+	Signature crypto.Signature
 }
