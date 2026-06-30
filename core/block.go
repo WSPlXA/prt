@@ -25,12 +25,14 @@ type Block struct {
 	hash types.Hash
 }
 
-func MewBlock(h *Header, txx []Transaction) *Block {
+func NewBlock(h *Header, txx []Transaction) *Block {
 	return &Block{
 		Header:       h,
 		Transactions: txx,
 	}
 }
+
+func (b *Block) Sign()
 
 func (b *Block) Decode(r io.Reader, dec Decoder[*Block]) error {
 	return dec.Decode(r, b)

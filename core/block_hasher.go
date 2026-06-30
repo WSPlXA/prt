@@ -7,14 +7,14 @@ import (
 	"prt/types"
 )
 
-var _ Hasher[any] = (*BlockHasher)(nil)
+var _ Hasher[*Block] = (*BlockHasher)(nil)
 
 type BlockHasher struct{}
 
-func (bh *BlockHasher) Hash(T any) types.Hash {
+func (bh *BlockHasher) Hash(b *Block) types.Hash {
 	buf := &bytes.Buffer{}
 	enc := gob.NewEncoder(buf)
-	if err := enc.Encode(T.(*Block).Header); err != nil {
+	if err := enc.Encode(b.Header); err != nil {
 		panic(err)
 	}
 	h := sha256.Sum256(buf.Bytes())

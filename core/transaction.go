@@ -8,3 +8,13 @@ type Transaction struct {
 	PublicKey crypto.PublicKey
 	Signature crypto.Signature
 }
+
+func (tx *Transaction) Sign(privKey crypto.PrivateKey) error {
+	sig, err := privKey.Sign(tx.Data)
+	if err != nil {
+		return err
+	}
+	tx.PublicKey = privKey.PublicKey()
+	tx.Signature = *sig
+	return nil
+}
