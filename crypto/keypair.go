@@ -9,7 +9,7 @@ import (
 	"prt/types"
 )
 
-// ESDSA算法
+// ECDSA算法
 type PrivateKey struct {
 	key *ecdsa.PrivateKey
 }

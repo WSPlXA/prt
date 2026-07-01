@@ -1,6 +1,7 @@
 package core
 
 import (
+	"fmt"
 	"prt/crypto"
 	"testing"
 
@@ -15,4 +16,5 @@ func TestTrasation_Sign(t *testing.T) {
 	}
 	assert.Nil(t, tx.Sign(privKey))
 	assert.NotNil(t, tx.Signature)
+	fmt.Printf("Signed data is %#v", tx.Signature)
 }

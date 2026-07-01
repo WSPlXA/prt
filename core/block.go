@@ -21,7 +21,6 @@ type Block struct {
 	Validator    crypto.PublicKey
 	Signature    *crypto.Signature
 
-	//cached
 	hash types.Hash
 }
 
@@ -31,8 +30,6 @@ func NewBlock(h *Header, txx []Transaction) *Block {
 		Transactions: txx,
 	}
 }
-
-func (b *Block) Sign()
 
 func (b *Block) Decode(r io.Reader, dec Decoder[*Block]) error {
 	return dec.Decode(r, b)
